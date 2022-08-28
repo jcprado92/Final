@@ -60,4 +60,5 @@ const deletePic = async (id) => {
     return err;
   }
 };
+
 module.exports = { getAllPics, getPic, createPic, updatePic, deletePic };
