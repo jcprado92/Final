@@ -25,4 +25,3 @@ function Pics() {
 }
 
 export default Pics;
-9
