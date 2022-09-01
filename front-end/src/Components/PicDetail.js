@@ -25,10 +25,11 @@ function PicDetail() {
     const handleDelete = () => {
       deletePic()
     }
-    
+
   return (
     <div>
         <h2>{pic.name}</h2>
+        <img src={pic.url} alt={pic.name}></img>
         <h3>{pic.location}</h3>
         <h4>{pic.is_favorite ? "Favorite" : "Not a favorite"}</h4>
         <Link to={`/pics/${id}/edit`}><button>Edit Pic</button></Link>
