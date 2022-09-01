@@ -13,6 +13,7 @@ function Pics() {
       .then((res) => setPics(res.data.payload))
       .catch((err) => console.log(err));
   }, []);
+  
   return (
     <div>
       <section>

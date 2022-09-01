@@ -6,6 +6,7 @@ function Nav() {
     <div>
         <Link to="/">Catch</Link>
         <Link to="/pics">Yics</Link>
+        <Link to="/pics/new">Add New Pic</Link>
     </div>
   )
 }
