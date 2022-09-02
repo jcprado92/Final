@@ -10,7 +10,6 @@ const {
 
 const {
   validateName,
-  validateUrl,
   validateLocation,
 } = require("../validations/check.js");
 
@@ -41,7 +40,6 @@ pics.get("/:id", async (req, res) => {
 pics.post(
   "/",
   validateName,
-  validateUrl,
   validateLocation,
   async (req, res) => {
     try {
@@ -63,7 +61,6 @@ pics.post(
 pics.put(
   "/:id",
   validateName,
-  validateUrl,
   validateLocation,
   async (req, res) => {
     const { id } = req.params;
