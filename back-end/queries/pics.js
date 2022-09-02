@@ -22,11 +22,34 @@ const getPic = async (id) => {
 
 //CREATE ROUTE
 const createPic = async (pic) => {
-  const { name, location, is_favorite } = pic;
+  let { name, url, location, is_favorite } = pic;
+
+  let lowercasedName = name.toLowerCase().split(" ")
+  let picName = lowercasedName.map((word) => {
+    if(word.length > 2){
+      return word.charAt(0).toUpperCase() + word.substring(1)
+    } else {
+      return word
+    }
+  }).join(" ");
+
+  let lowercasedLocation = location.toLowerCase().split(" ")
+  let picLocation = lowercasedLocation.map((word) => {
+    if(word.length > 2){
+      return word.charAt(0).toUpperCase() + word.substring(1)
+    } else {
+      return word
+    }
+  }).join(" ");
+  
+  if(!url){
+    url = "https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"
+  }
+
   try {
     const newPic = await db.one(
-      "INSERT INTO pics (name, location, is_favorite) VALUES ($1, $2, $3) RETURNING *",
-      [name, location, is_favorite]
+      "INSERT INTO pics (name, url, location, is_favorite) VALUES ($1, $2, $3, $4) RETURNING *",
+      [picName, url, picLocation, is_favorite]
     );
     return newPic;
   } catch (err) {
@@ -36,11 +59,34 @@ const createPic = async (pic) => {
 
 //UPDATE ROUTE
 const updatePic = async (pic, id) => {
-  const { name, location, is_favorite } = pic;
+  let { name, url, location, is_favorite } = pic;
+
+  let lowercasedName = name.toLowerCase().split(" ")
+  let picName = lowercasedName.map((word) => {
+    if(word.length > 2){
+      return word.charAt(0).toUpperCase() + word.substring(1)
+    } else {
+      return word
+    }
+  }).join(" ");
+
+  let lowercasedLocation = location.toLowerCase().split(" ")
+  let picLocation = lowercasedLocation.map((word) => {
+    if(word.length > 2){
+      return word.charAt(0).toUpperCase() + word.substring(1)
+    } else {
+      return word
+    }
+  }).join(" ");
+  
+  if(!url){
+    url = "https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"
+  }
+
   try {
     const updatedPic = await db.one(
-      "UPDATE pics SET name=$1, location=$2, is_favorite=$3 WHERE id=$4 RETURNING *",
-      [name, location, is_favorite, id]
+      "UPDATE pics SET name=$1, url=$2, location=$3, is_favorite=$4 WHERE id=$5 RETURNING *",
+      [picName, url, picLocation, is_favorite, id]
     );
     return updatedPic;
   } catch (err) {

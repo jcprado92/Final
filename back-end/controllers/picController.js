@@ -8,6 +8,12 @@ const {
   deletePic,
 } = require("../queries/pics.js");
 
+const {
+  validateName,
+  validateUrl,
+  validateLocation,
+} = require("../validations/check.js");
+
 // INDEX
 pics.get("/", async (req, res) => {
   const allPics = await getAllPics();
@@ -32,32 +38,44 @@ pics.get("/:id", async (req, res) => {
 });
 
 //CREATE
-pics.post("/", async (req, res) => {
-  const { body } = req;
-  try {
-    const createdPic = await createPic(body);
-    if (createdPic.id) {
-      res.status(200).json({ payload: createdPic, success: true });
-    } else {
-      res.status(422).json({ payload: "Must include name", success: false });
+pics.post(
+  "/",
+  validateName,
+  validateUrl,
+  validateLocation,
+  async (req, res) => {
+    try {
+      const createdPic = await createPic(req.body);
+      if (createdPic.id) {
+        res.status(200).json({ payload: createdPic, success: true });
+      } else {
+        res
+          .status(422)
+          .json({ payload: "Could not create Pic", success: false });
+      }
+    } catch (err) {
+      console.log(err);
     }
-  } catch (err) {
-    console.log(err);
   }
-});
+);
 
 //UPDATE
-pics.put("/:id", async (req, res) => {
-  const { id } = req.params;
-  const { body } = req;
+pics.put(
+  "/:id",
+  validateName,
+  validateUrl,
+  validateLocation,
+  async (req, res) => {
+    const { id } = req.params;
 
-  const updatedPic = await updatePic(body, id);
-  if (updatedPic.id) {
-    res.status(200).json(updatedPic);
-  } else {
-    res.status(404).json({ error: "Pic not found" });
+    const updatedPic = await updatePic(req.body, id);
+    if (updatedPic.id) {
+      res.status(200).json(updatedPic);
+    } else {
+      res.status(404).json({ error: "Pic not found" });
+    }
   }
-});
+);
 
 //DELETE
 pics.delete("/:id", async (req, res) => {
