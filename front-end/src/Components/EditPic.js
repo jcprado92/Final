@@ -10,7 +10,7 @@ function EditPic() {
 
     const [ pic, setPic ] = useState({
         name: "",
-        url: "",
+        url: null,
         location: "",
         is_favorite: true
     })
@@ -53,7 +53,6 @@ function EditPic() {
         <input
           id="url"
           type="text"
-          required
           value={pic.url}
           placeholder="URL"
           onChange={handleTextChange}

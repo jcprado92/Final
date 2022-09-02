@@ -7,10 +7,11 @@ const API = process.env.REACT_APP_API_URL;
 function NewPic() {
   const [pic, setPic] = useState({
     name: "",
-    url: "",
+    url: null,
     location: "",
     is_favorite: true,
   });
+  
   const navigate = useNavigate();
 
   const addPic = (pic) => {
@@ -45,9 +46,8 @@ function NewPic() {
         <label htmlFor="url">URL:</label>
         <input
           id="url"
-          type="text"
-          required
           value={pic.url}
+          type="text"
           placeholder="URL"
           onChange={handleTextChange}
         />

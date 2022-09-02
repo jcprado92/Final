@@ -12,9 +12,12 @@ function PicDetail() {
 
     useEffect(() => {
         axios.get(`${API}/pics/${id}`)
-        .then(res => setPic(res.data.payload))
+        .then(res => {
+          
+          console.log(res.data.payload)
+          setPic(res.data.payload)})
         .catch(err => console.error(err))
-    }, [pic])
+    }, [id])
 
     const deletePic = () => {
       axios.delete(`${API}/pics/${id}`)
