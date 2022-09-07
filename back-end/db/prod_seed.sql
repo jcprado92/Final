@@ -1,4 +1,3 @@
-\c pics_dev;
 
 INSERT INTO pics (name, url, location, is_favorite) VALUES
 ('Washington Square Park', 'https://nypost.com/wp-content/uploads/sites/2/2018/05/washington-square-park-drugs-nyu.jpg?quality=75&strip=all', 'Manhattan', true),

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, Link, useParams } from 'react-router-dom'
 import axios from 'axios'
-
+import "../styles/stylin.css"
 const API = process.env.REACT_APP_API_URL
 
 function EditPic() {

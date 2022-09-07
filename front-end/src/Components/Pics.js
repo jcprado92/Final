@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Pic from "./Pic";
 import axios from "axios";
+import "../styles/stylin.css"
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -16,7 +17,7 @@ function Pics() {
   
   return (
     <div>
-      <section>
+      <section className="pic-container">
         {pics.map((pic) => (
           <Pic key={pic.id} pic={pic} id={pic.id}/>
         ))}

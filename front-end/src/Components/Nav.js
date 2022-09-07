@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from "react-router-dom"
+import "../styles/stylin.css"
 
 function Nav() {
   return (
-    <div>
-        <Link to="/">Catch</Link>
-        <Link to="/pics">Yics</Link>
-        <Link to="/pics/new">Add New Pic</Link>
+    <div className='Nav'>
+        <Link to="/">Views</Link>
+        <Link to="/pics">My Views</Link>
+        <Link to="/pics/new">Add New View</Link>
     </div>
   )
 }

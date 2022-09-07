@@ -1,11 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Nav from "./Components/Nav";
-import Pics from "./Components/Pics";
-import PicDetail from "./Components/PicDetail";
-import FourOFour from "./Components/FourOFour";
-import Home from "./Components/Home";
-import EditPic from "./Components/EditPic"
-import NewPic from "./Components/NewPic";
+import Edit from "./Pages/Edit";
+import FourOFour from "./Pages/FourOFour";
+import Home from "./Pages/Home";
+import Index from "./Pages/Index";
+import New from "./Pages/New";
+// import MapP from "./Pages/MapP";
+import Show from "./Pages/Show";
+import "./styles/stylin.css"
+
 
 function App() {
   return (
@@ -14,10 +17,11 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={ <Home />} />
-        <Route path="/pics" element={ <Pics />} />
-        <Route path="/pics/:id" element={ <PicDetail />} />
-        <Route path="/pics/new" element={<NewPic/> } />
-        <Route path="/pics/:id/edit" element={<EditPic />} />
+        {/* <Route path="/map" element={ <MapP /> } /> */}
+        <Route path="/pics" element={ < Index />} />
+        <Route path="/pics/:id" element={ <Show />} />
+        <Route path="/pics/new" element={<New/> } />
+        <Route path="/pics/:id/edit" element={<Edit />} />
         <Route path="*" element={ <FourOFour />} />
       </Routes>
     </div>

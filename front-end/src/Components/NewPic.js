@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link, useParams } from "react-router-dom";
+import "../styles/stylin.css"
 
 const API = process.env.REACT_APP_API_URL;
 
 function NewPic() {
   const [pic, setPic] = useState({
     name: "",
-    url: null,
+    url: "",
     location: "",
     is_favorite: true,
   });
@@ -43,6 +44,7 @@ function NewPic() {
           required
         />
           <br />
+          <br />
         <label htmlFor="url">URL:</label>
         <input
           id="url"
@@ -51,6 +53,7 @@ function NewPic() {
           placeholder="URL"
           onChange={handleTextChange}
         />
+          <br />
           <br />
         <label htmlFor="location">Location:</label>
         <input
@@ -62,6 +65,7 @@ function NewPic() {
           onChange={handleTextChange}
         />
           <br />
+          <br />
         <label htmlFor="is_favorite">Favorite:</label>
         <input
           id="is_favorite"
@@ -71,6 +75,7 @@ function NewPic() {
           placeholder="Favorite?"
           onChange={handleTextChange}
         />
+        <br />
         <br />
         <input type="submit" />
       </form>
