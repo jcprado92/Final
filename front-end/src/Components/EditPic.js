@@ -39,6 +39,7 @@ function EditPic() {
   return (
     <div className="edit">
       <form onSubmit={handleSubmit} className="edit">
+      <h1>Edit View</h1>
         <label htmlFor="name">Name:</label>
         <input
           id="name"
@@ -49,6 +50,7 @@ function EditPic() {
           required
         />
           <br />
+          <br />
         <label htmlFor="url">URL:</label>
         <input
           id="url"
@@ -57,6 +59,7 @@ function EditPic() {
           placeholder="URL"
           onChange={handleTextChange}
         />
+          <br />
           <br />
         <label htmlFor="location">Location:</label>
         <input
@@ -68,6 +71,7 @@ function EditPic() {
           onChange={handleTextChange}
         />
           <br />
+          <br />
         <label htmlFor="is_favorite">Favorite:</label>
         <input
           id="is_favorite"
@@ -77,6 +81,7 @@ function EditPic() {
           placeholder="Favorite?"
           onChange={handleTextChange}
         />
+        <br />
         <br />
       <Link to={`/pics/${id}`}>
         <button>Nevermind!</button>

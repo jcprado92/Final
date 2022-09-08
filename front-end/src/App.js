@@ -8,6 +8,7 @@ import Index from "./Pages/Index";
 import New from "./Pages/New";
 // import MapP from "./Pages/MapP";
 import Show from "./Pages/Show";
+import Footer from "./Components/Footer";
 import "./styles/stylin.css"
 
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="*" element={ <FourOFour />} />
       </Routes>
     </div>
+    <Footer />
     </Router>
   );
 }

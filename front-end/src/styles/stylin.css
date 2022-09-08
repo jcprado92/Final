@@ -1,7 +1,3 @@
-.App {
-    background-image: url("../images/Background-img.jpeg"); 
-    background-size: cover;
-}
 
 .pic-details {
     text-align: center;
@@ -48,7 +44,7 @@
 }
 
 .Nav {
-    background-color: #ffffff;
+    background-color: #ffff;
     color: black;
     display: flex;
     justify-content: space-between;
@@ -72,6 +68,10 @@ a{
     width: 300px;
     height: 300px;
     border: groove;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)
 }
 
 .new {
@@ -81,13 +81,12 @@ a{
     width: 300px;
     height: 300px;
     border: groove;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)
 }
 
-/* .home{
-    text-align: center;
-    background-image: url("../images/Background-img.jpeg"); 
-    background-size: cover;
-} */
 
 /* video {
     object-fit: cover;
@@ -96,3 +95,18 @@ a{
     position: fixed;
     z-index: -1;
   } */
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: rgb(67,67,67);
+    background: linear-gradient(0deg, rgba(67,67,67,1) 0%, rgba(255,255,255,1) 55%);
+  }
+
+.link {
+    padding: 20px
+  }

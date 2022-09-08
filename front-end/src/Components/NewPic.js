@@ -34,6 +34,7 @@ function NewPic() {
   return (
     <div className="new">
       <form onSubmit={handleSubmit} className="new">
+      <h1>Create View</h1>
         <label htmlFor="name">Name:</label>
         <input
           id="name"
