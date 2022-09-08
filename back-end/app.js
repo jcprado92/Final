@@ -15,7 +15,7 @@ app.use("/pics", picsController);
 
 // ROUTES
 app.get("/", (req, res) => {
-  res.send("Welcome to Scurererere");
+  res.send("Welcome to Views");
 });
 
 // 404 PAGE
