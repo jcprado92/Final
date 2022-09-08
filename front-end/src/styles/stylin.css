@@ -68,10 +68,10 @@ a{
     width: 300px;
     height: 300px;
     border: groove;
-    position: absolute;
+    /* position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%) */
 }
 
 .new {
@@ -81,10 +81,10 @@ a{
     width: 300px;
     height: 300px;
     border: groove;
-    position: absolute;
+    /* position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%) */
 }
 
 
