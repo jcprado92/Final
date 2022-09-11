@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate, Link, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../styles/stylin.css"
 
 const API = process.env.REACT_APP_API_URL;
