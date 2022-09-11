@@ -10,7 +10,7 @@ function EditPic() {
 
     const [ pic, setPic ] = useState({
         name: "",
-        url: null,
+        url: "",
         location: "",
         is_favorite: true
     })

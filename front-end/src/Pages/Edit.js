@@ -3,7 +3,6 @@ import EditPic from "../Components/EditPic"
 function Edit() {
   return (
     <div>
-      
         <EditPic />
     </div>
   )
