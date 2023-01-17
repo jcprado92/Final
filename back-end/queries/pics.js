@@ -45,7 +45,7 @@ const createPic = async (pic) => {
   if(!url){
     url = "https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"
   }
-
+//create helper function 
   try {
     const newPic = await db.one(
       "INSERT INTO pics (name, url, location, is_favorite) VALUES ($1, $2, $3, $4) RETURNING *",
